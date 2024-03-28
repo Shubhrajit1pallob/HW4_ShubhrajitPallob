@@ -1,0 +1,15 @@
+Steps to know to use the program.
+
+1. The program opens when you run it.
+
+2. Security measures are in place so the program does not crash.
+
+3. The Program starts by showing you three buttons and a heading.
+
+4. There is detailed documentation in the code itself.
+
+5. There is a git repository connected to this project. The link will be posted below.
+
+	https://github.com/Shubhrajit1pallob/HW4_ShubhrajitPallob.git
+
+6. I hope you enjoy the program that I have created.
