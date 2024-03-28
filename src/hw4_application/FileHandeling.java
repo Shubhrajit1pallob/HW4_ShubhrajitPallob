@@ -97,13 +97,13 @@ public class FileHandeling {
 	    }
 	}
 	
-	//Check if folder is empty
+	//Check if folder is empty or is there a folder at all.
 	public static boolean isFolderEmpty(String folderPath) {
 	    File folder = new File(folderPath);
 	    if (folder.exists() && folder.isDirectory()) {
 	        return folder.list().length == 0;
 	    } else {
-	        System.out.println("Folder does not exist or is not a directory");
+//	        System.out.println("Folder does not exist or is not a directory");
 	        return true; // Consider non-existing folders as empty
 	    }
 	}
@@ -163,6 +163,7 @@ public class FileHandeling {
 				directory.mkdir();
 			    
 			}
+			
 			BufferedWriter bufferWriter = new BufferedWriter(new FileWriter(directory.getPath() + "/" + patientId+ "_PatientInfo.txt"));
 			
 			

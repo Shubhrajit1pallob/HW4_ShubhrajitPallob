@@ -9,6 +9,7 @@ import javafx.scene.layout.VBox;
 
 public class Main extends Application {
 	
+	//The attributes that will be accessed throughout the package.
 	public UIMain theMainUI; 
 	public static Stage myStage;
 	public static Scene mainScene;
@@ -22,7 +23,6 @@ public class Main extends Application {
 		try {
 			myStage = primaryStage;
 			BorderPane root = new BorderPane();
-//			theMainUI = new UIMain(root);
 			
 			mainScene = UIMain.createMainScene(root);
 			patientIntakeScene = UIMain.createPatientIntakeScene();
@@ -37,6 +37,7 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 	}
+	
 	
 	public static void switchScene(Scene s) {
 		
