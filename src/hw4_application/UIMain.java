@@ -101,25 +101,20 @@ public class UIMain {
 		
 		BorderPane rootPane = new BorderPane();
 		patientIntakePageLabel = createPageLabel("Patient Intake Form", rootPane);
-//		VBox leftBox = new VBox();
+		
 		firstName = bodyLabel("First Name:");
 		lastName = bodyLabel("Last Name:");
 		email = bodyLabel("EMail:");
 		phoneNumber = bodyLabel("Phone Number:");
 		healthHistory = bodyLabel("Health History:");
 		insuranceId = bodyLabel("Insurance ID");
-//		leftBox.setAlignment(Pos.BASELINE_LEFT);
-//		leftBox.getChildren().addAll(firstName, lastName, email, phoneNumber, healthHistory, insuranceId);
-		
-//		VBox centerBox = new VBox();
+
 		firstNameField = createTextField();
 		lastNamefield = createTextField();
 		emailField = createTextField();
 		phoneNumbeField = createTextField();
 		healthHistoryField = createTextField();
 		insuranceIdField = createTextField();
-//		centerBox.setAlignment(Pos.BASELINE_CENTER);
-//		centerBox.getChildren().addAll(firstNameField, lastNamefield, emailField, phoneNumbeField, healthHistoryField, insuranceIdField);
 		
 		
 		//setting up a id ArrayList to keep track of patient's records.
@@ -147,7 +142,6 @@ public class UIMain {
 		
 		rootPane.setLeft(grid);
 		rootPane.setBottom(rightBox);
-//		rootPane.setCenter(grid);
 		
 		saveBtn.setOnAction(e -> {
 			
@@ -162,7 +156,6 @@ public class UIMain {
 		    } else {
 		    	
 		    	int id = FileHandeling.generateNumber();
-//				uniqueIdlist.add(id);
 				
 				String patientId = String.valueOf(id);
 				
@@ -241,7 +234,6 @@ public class UIMain {
 		topGrid.add(vLACACScore, 0, 2, 1, 1);
 		topGrid.setPadding(new Insets(15));
 		
-//		centerGrid.add(vLACACScore, 0, 0, 2, 1);
 		centerGrid.add(lm1, 0, 1, 1, 1);
 		centerGrid.add(lmField1, 1, 1, 1, 1);
 		centerGrid.add(lad1, 0, 2, 1, 1);
@@ -266,8 +258,6 @@ public class UIMain {
 		        alert.showAndWait();
 		    } else {
 		    	
-		    	
-		        
 		    	//Process the data
 				FileHandeling.processingCTScanData();
 				
@@ -380,9 +370,8 @@ public class UIMain {
 		
 		BorderPane rootPane = new BorderPane();
 		String labelText = "Hello " + patientIDField2.getText();
-		
-		
-		pageLabel = createPageLabel(labelText, rootPane);	//For now the patient Id will do change it when implementing the database features in the program.
+
+		pageLabel = createPageLabel(labelText, rootPane);
 		pageLabel.setAlignment(Pos.CENTER);
 		totalCACScore2 = new Label("The Total Agatston CAC Score");
 		lm2 = new Label("LM:");
@@ -462,10 +451,6 @@ public class UIMain {
 		return button;
 		
 	}
-	
-	
-	
-	
 	
 	/**********************************************************************************************
 

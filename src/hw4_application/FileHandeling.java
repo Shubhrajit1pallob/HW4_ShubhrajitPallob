@@ -12,9 +12,12 @@ import javafx.scene.control.Alert;
 
 public class FileHandeling {
 	
+	//Local variable to store the data of the patient temporarily.
 	private static String[] patientInfo = new String[7];
 	private static String[] patientDataInfo = new String[7];
 
+	//This function processes the data from the CT Scan form and put it in the array to store the data locally
+	//After that the data is written to a file.
 	public static void processpatientInfo(String patientId) {
 		patientInfo[0] = patientId;
 		patientInfo[1] = UIMain.firstNameField.getText();
@@ -25,6 +28,7 @@ public class FileHandeling {
 		patientInfo[6] = UIMain.insuranceIdField.getText();
 	}
 	
+	//This function clears the patient's info textFields
 	public static void clearPatientInfoTextField() {
 		UIMain.firstNameField.clear();
 		UIMain.lastNamefield.clear();
@@ -34,6 +38,7 @@ public class FileHandeling {
 		UIMain.insuranceIdField.clear();
 	}
 	
+	//This function Clears the patientView TextFields. 
 	public static void clearPatientViewTextField() {
 		UIMain.patientIDField2.clear();
 		UIMain.totalCACScoreField2.clear();
@@ -44,6 +49,8 @@ public class FileHandeling {
 		UIMain.pdaField2.clear();
 	}
 	
+	//Process the CT Scan data and stores it locally
+	//This locally stored data will be later stored in the file.
 	public static void processingCTScanData() {
 		patientDataInfo[0] = UIMain.patientIDField1.getText();
 		patientDataInfo[1] = UIMain.totlaCACScoreField1.getText();
@@ -54,6 +61,7 @@ public class FileHandeling {
 		patientDataInfo[6] = UIMain.pdaField1.getText();
 	}
 	
+	//This method clears the CT Scan view TextFields.
 	public static void clearCTTestField1() {
 		UIMain.patientIDField1.clear();
 		UIMain.totlaCACScoreField1.clear();
@@ -140,7 +148,7 @@ public class FileHandeling {
 		
 	}
 	
-	// 2. Create a new file for new Patient.
+	// 2. Create a new file and Folder if not created for new Patient Information.
 	
 	public static void createNewPatientFile() {
 		
@@ -172,7 +180,7 @@ public class FileHandeling {
 		
 	}
 	
-	
+	//Creates a new file and Folder if not created for storing the patient's data
 	public static void createNewPatientpatientDataFile() {
 		
 		try {
@@ -222,24 +230,26 @@ public class FileHandeling {
 		
 	}
 	
+	//Checks if we have the right file for the patient when the Patient wants to view their data.
 	public static boolean rightFile(File file, String patientId) {
 		
 		String patientFileId;
-    	String patientFileName = file.getName();
-    	
-    	if (patientFileName.length() >= 5) {
-    		patientFileId = patientFileName.substring(0, 5);
-    	} else {
-    		patientFileId = patientFileName;
-    	}
-    	
-    	if (patientFileId.equals(patientId)) {
-    		return true;
-    	}
+		String patientFileName = file.getName();
+		
+		if (patientFileName.length() >= 5) {
+			patientFileId = patientFileName.substring(0, 5);
+		} else {
+			patientFileId = patientFileName;
+		}
+		
+		if (patientFileId.equals(patientId)) {
+			return true;
+		}
 		
 		return false;
 	}
 	
+	//Show s the patient's data that was recorded during the CT Scan. 
 	public static boolean showPatientData(String patientId) {
 		
 		//This part is for the getting the Patient Name
